@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir five
 
 for i in {1..5}; do
@@ -10,15 +12,13 @@ for i in {1..5}; do
           echo "2" >> five/dir$i/file$j
           echo "2" >> five/dir$i/file$j
       elif [[ "$j" =~ ^[03] ]]; then
-	  echo "3" >> five/dir$i/file$j
-	  echo "3" >> five/dir$i/file$j
-	  echo "3" >> five/dir$i/file$j
+	  for a in {1..3}; do
+	      echo "3" >> five/dir$i/file$j
+	  done
       else
-	  echo "4" >> five/dir$i/file$j
-	  echo "4" >> five/dir$i/file$j
-	  echo "4" >> five/dir$i/file$j
-	  echo "4" >> five/dir$i/file$j
-
+	  for b in {1..4}; do
+	      echo "4" >> five/dir$i/file$j
+	  done
       fi
   done
 done
